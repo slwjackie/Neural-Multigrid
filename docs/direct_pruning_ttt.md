@@ -49,7 +49,7 @@ Warm은 **준비 완료 후 풀이 속도**를 비교하는 유효한 지표이�
 
 ```bash
 git clone --single-branch --branch residual-u-net-teacher \
-  https://github.com/slwjackie/adaptive-multigrid.git \
+  https://github.com/slwjackie/Neural-Multigrid.git \
   "$HOME/Desktop/adaptive-multigrid-pruning"
 cd "$HOME/Desktop/adaptive-multigrid-pruning"
 python3.12 -m venv .venv

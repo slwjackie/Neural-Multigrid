@@ -70,7 +70,7 @@ TTT는 이 실험에 없다. Setup 비용과 learned cycle 실패 후 rollback/f
 
 ```bash
 git clone --single-branch --branch residual-u-net-teacher \
-  https://github.com/slwjackie/adaptive-multigrid.git \
+  https://github.com/slwjackie/Neural-Multigrid.git \
   "$HOME/Desktop/adaptive-multigrid-sparse-smoother"
 cd "$HOME/Desktop/adaptive-multigrid-sparse-smoother"
 git log -1 --oneline

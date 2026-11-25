@@ -92,8 +92,8 @@ tests/test_sequence_world_model.py
 ```bash
 git status --short
 git fetch origin
-git switch main
-git pull --ff-only origin main
+git switch residual-u-net-teacher
+git pull --ff-only origin residual-u-net-teacher
 source .venv/bin/activate
 python -m pip install -e '.[dev]'
 export OMP_NUM_THREADS=1

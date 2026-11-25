@@ -100,8 +100,8 @@ World Model의 feature/관측/추론 비용은 제안 모델 시간에 포함한
 ```bash
 git status --short
 git fetch origin
-git switch main
-git pull --ff-only origin main
+git switch residual-u-net-teacher
+git pull --ff-only origin residual-u-net-teacher
 source .venv/bin/activate
 python -m pip install -e '.[dev]'
 export OMP_NUM_THREADS=1

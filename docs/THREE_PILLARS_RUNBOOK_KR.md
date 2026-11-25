@@ -78,17 +78,16 @@ Smoke와 축소 final 경로 테스트는 **성능 우월성이나 전체 연구
 새로 설치할 때:
 
 ```bash
-git clone https://github.com/slwjackie/adaptive-multigrid.git
-cd adaptive-multigrid
-git switch main
+git clone https://github.com/slwjackie/Neural-Multigrid.git
+cd Neural-Multigrid
 ```
 
 이미 clone한 폴더라면 먼저 `git status --short`로 로컬 변경을 확인한다. 변경이 있으면 별도 commit/보관한 뒤:
 
 ```bash
-cd /실제/저장소/경로/adaptive-multigrid
-git switch main
-git pull --ff-only origin main
+cd /실제/저장소/경로/Neural-Multigrid
+git switch residual-u-net-teacher
+git pull --ff-only origin residual-u-net-teacher
 ```
 
 Python 3.12 환경을 권장한다. 코드 요구사항은 Python >=3.10, Torch >=2.10이다.

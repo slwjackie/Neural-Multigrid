@@ -451,7 +451,7 @@ caffeinate -i python -u "$SCRIPT" fit --run-dir "$LIGHT_RUN" --resume
 
 ```bash
 git clone --single-branch --branch residual-u-net-teacher \
-  https://github.com/slwjackie/adaptive-multigrid.git \
+  https://github.com/slwjackie/Neural-Multigrid.git \
   "$HOME/Desktop/adaptive-multigrid-light"
 cd "$HOME/Desktop/adaptive-multigrid-light"
 git log -1 --oneline

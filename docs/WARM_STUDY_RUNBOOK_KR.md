@@ -35,8 +35,8 @@ Neural runtime 제어기 비용과 probe 비용은 측정에 포함한다.
 ```bash
 git status --short
 git fetch origin
-git switch main
-git pull --ff-only origin main
+git switch residual-u-net-teacher
+git pull --ff-only origin residual-u-net-teacher
 source .venv/bin/activate
 python -m pip install -e '.[dev]'
 export OMP_NUM_THREADS=1

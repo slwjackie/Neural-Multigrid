@@ -193,7 +193,7 @@ rollback, classical 대체를 전혀 사용하지 않는다. Residual 수축 지
 ```bash
 REPO="$HOME/Desktop/adaptive-multigrid-joint"
 git clone --single-branch --branch residual-u-net-teacher \
-  https://github.com/slwjackie/adaptive-multigrid.git "$REPO"
+  https://github.com/slwjackie/Neural-Multigrid.git "$REPO"
 cd "$REPO"
 git log -1 --oneline
 python3.12 -m venv .venv

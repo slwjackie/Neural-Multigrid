@@ -54,8 +54,8 @@ Dirichlet 경계 제거 후 행합은 **P_C*의 행합**이다. 무조건 1을 �
 ```bash
 git status --short
 git fetch origin
-git switch main
-git pull --ff-only origin main
+git switch residual-u-net-teacher
+git pull --ff-only origin residual-u-net-teacher
 source .venv/bin/activate
 python -m pip install -e '.[dev]'
 export OMP_NUM_THREADS=1

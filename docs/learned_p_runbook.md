@@ -13,7 +13,7 @@
 
 ```bash
 git clone --single-branch --branch residual-u-net-teacher \
-  https://github.com/slwjackie/adaptive-multigrid.git \
+  https://github.com/slwjackie/Neural-Multigrid.git \
   "$HOME/Desktop/adaptive-multigrid-ponly"
 cd "$HOME/Desktop/adaptive-multigrid-ponly"
 python3.12 -m venv .venv

@@ -143,7 +143,7 @@ RHS=1의 cycle 합계는 fixed_C와 세 learned 후보 모두 115회였고, setu
 
 ```bash
 git clone --single-branch --branch residual-u-net-teacher \
-  https://github.com/slwjackie/adaptive-multigrid.git \
+  https://github.com/slwjackie/Neural-Multigrid.git \
   "$HOME/Desktop/adaptive-multigrid-em-line"
 cd "$HOME/Desktop/adaptive-multigrid-em-line"
 python3.12 -m venv .venv

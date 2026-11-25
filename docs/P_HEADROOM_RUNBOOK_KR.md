@@ -33,8 +33,8 @@
 ```bash
 git status --short
 git fetch origin
-git switch main
-git pull --ff-only origin main
+git switch residual-u-net-teacher
+git pull --ff-only origin residual-u-net-teacher
 source .venv/bin/activate
 export OMP_NUM_THREADS=1
 export OPENBLAS_NUM_THREADS=1

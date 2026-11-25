@@ -15,7 +15,7 @@
 | [bamg_energy_cnn_initialization_comparison.md](bamg_energy_cnn_initialization_comparison.md) | 단일 선택 λ의 scratch/warm 실험, epoch shuffle, 층화 데이터, 공통 1,270개 holdout 설계 |
 | [bamg_energy_teacher_comparison.md](bamg_energy_teacher_comparison.md) | CNN 없는 수치 teacher 비교, 기본 λ 0·0.01·0.1·1·5·10·30·50, 정규화 목적함수, 과거 pilot 구분 |
 | [bamg_compact_weight_study.md](bamg_compact_weight_study.md) | Fixed bilinear support Weight CNN source 경로, warm initialization, 학습·검증 |
-| [bamg_two_cnn_study.md](bamg_two_cnn_study.md), [검증 기록](bamg_two_cnn_validation.md) | 기반 BAMG teacher·CNN 경로와 해당 시점의 검증 기록 |
+| [bamg_two_cnn_study.md](bamg_two_cnn_study.md) | BAMG teacher 생성과 CNN 비교군 |
 | [Q1_FEM_KR.md](Q1_FEM_KR.md) | Q1 요소, 경계, quadrature, discrete manufactured RHS와 FEM load 구분 |
 
 ## 명령의 범위
@@ -26,28 +26,3 @@
 - `report`와 `report-final`은 저장된 결과를 읽는다. 학습이나 평가를 새로 수행하지 않는다.
 
 각 output에는 처음 선택한 실행기를 계속 사용한다. Feature9는 자체 label 메모리 절약 경로를 포함한다. 기본 routing 문서의 원래 실행기와 저메모리 adapter의 차이는 저메모리 문서에서 확인한다. 데이터 규모·특징 모드·학습 예산은 final/OOD를 열기 전에 development validation으로 결정한다.
-
-## 이전 실험과 독립 비교 경로
-
-아래 문서의 “새”, “주 경로”, “현재”, “기준 main”은 각 문서를 작성한 시점의 문맥이다. 해당 실험의 실행기·설정·결과에만 적용하며, 위 routing/feature9 경로의 구성으로 읽지 않는다.
-
-| 경로 | 문서 |
-| --- | --- |
-| EM5 모방 P → P 고정 줄 smoother → 공동 미세조정 | [em_line_study.md](em_line_study.md) |
-| 같은 P의 경량 줄 smoother, 선택적 온라인 적응 | [light_smoother_study.md](light_smoother_study.md), [warm validation](light_smoother_warm_validation.md), [figures](light_smoother_figures.md) |
-| Line_alt 고정 + P-only Frobenius 학습 | [learned_p_study.md](learned_p_study.md), [learned_p_runbook.md](learned_p_runbook.md), [아키텍처](ARCHITECTURE_KR.md) |
-| EM5 기반 U-net teacher → CNN student | [RESIDUAL_UNET_TRANSFER_KR.md](RESIDUAL_UNET_TRANSFER_KR.md) |
-| Direct CNN pruning / TTT | [direct_pruning_ttt.md](direct_pruning_ttt.md) |
-| EM5 기반 direct CNN + sparse smoother | [direct_sparse_smoother.md](direct_sparse_smoother.md) |
-| Bilinear 기반 P·pre/post smoother 공동 학습 | [joint_transfer_study.md](joint_transfer_study.md) |
-| EM-affine P | [EM_AFFINE_HP_RUNBOOK_KR.md](EM_AFFINE_HP_RUNBOOK_KR.md) |
-| P 개선 여지 진단 / 후속 제안 | [P_HEADROOM_RUNBOOK_KR.md](P_HEADROOM_RUNBOOK_KR.md), [HP_HSP_RESEARCH_PLAN_KR.md](HP_HSP_RESEARCH_PLAN_KR.md) |
-| Warm-first H_S | [WARM_STUDY_RUNBOOK_KR.md](WARM_STUDY_RUNBOOK_KR.md) |
-| H_S / world model | [HS_WORLD_THESIS_RUNBOOK_KR.md](HS_WORLD_THESIS_RUNBOOK_KR.md), [WORLD_MODEL_SEQUENCE_RUNBOOK_KR.md](WORLD_MODEL_SEQUENCE_RUNBOOK_KR.md) |
-| Three-pillars | [THREE_PILLARS_RUNBOOK_KR.md](THREE_PILLARS_RUNBOOK_KR.md), [검증 기록](THREE_PILLARS_VERIFICATION_KR.md) |
-| Strong-aware 설계·계획·결과 | [아키텍처](STRONG_AWARE_ARCHITECTURE_KR.md), [계획](STRONG_AWARE_PLAN_KR.md), [결과](STRONG_AWARE_RESULTS_KR.md), [후속 검증](STRONG_AWARE_VALIDATION_KR.md) |
-| Strong-aware 데이터 / transfer / smoother / policy | [데이터](research_data_notes.md), [transfer](research_transfer_notes.md), [smoother](research_smoothers_notes.md), [policy](research_policy_notes.md), [generation](research_generation_notes.md) |
-| 수치 알고리즘·학습·참고자료 | [알고리즘](ALGORITHM_AND_REFERENCES.md), [초기 v6.7 솔버](V67_SOLVER_NOTES_KR.md), [수치 baseline 출처](BASELINE_PROVENANCE.md), [참고자료](REFERENCES.md) |
-| v6.6 패키지 | [영문 README](legacy/README_v6_6.md), [국문 README](legacy/README_v6_6_KR.md) |
-
-`*_VALIDATION.json`, `BASELINE_PROVENANCE.json`, 과거 package manifest와 `legacy/`의 기록은 각 스냅샷에 대한 것이다. 현재 소스의 성능 증거로 해석하지 않는다. 최신 테스트 실행과 소스 체크섬 명령은 [현재 README](../README.md#verification-and-earlier-work)를 따른다.

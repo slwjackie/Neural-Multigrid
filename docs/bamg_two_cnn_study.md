@@ -344,10 +344,6 @@ Stage1 student 분포 teacher refresh, GPU 병렬 실행 및 architecture 자동
 
 ```bash
 python -m pytest -ra
-sha256sum -c THREE_PILLARS_SOURCE.sha256
-sha256sum -c P_HEADROOM_SOURCE.sha256
-sha256sum -c WORLD_MODEL_SOURCE.sha256
-sha256sum -c HS_WORLD_SOURCE.sha256
 ```
 
 Source provenance를 검사하는 기존 테스트는 새 Python 파일의 추가도

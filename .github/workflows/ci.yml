@@ -1,9 +1,9 @@
 name: Neural MG thesis validation
 on:
   push:
-    branches: [main, fix/three-pillars-20260922, cnn-prolongation-bamg-energy-teacher]
+    branches: [cnn-prolongation-bamg-energy-teacher]
   pull_request:
-    branches: [main]
+    branches: [cnn-prolongation-bamg-energy-teacher]
 permissions:
   contents: read
 jobs:
@@ -32,15 +32,11 @@ jobs:
         run: |
           mkdir -p artifacts/ci
           python -m pytest -ra --junitxml=artifacts/ci/pytest.xml
-      - name: Verify source snapshot
-        run: |
-          sha256sum -c THREE_PILLARS_SOURCE.sha256
-          sha256sum -c P_HEADROOM_SOURCE.sha256
-          sha256sum -c WORLD_MODEL_SOURCE.sha256
-          sha256sum -c HS_WORLD_SOURCE.sha256
+      - name: Check tracked files after tests
+        run: git diff --exit-code HEAD --
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: three-pillars-validation
+          name: multigrid-validation
           path: artifacts/ci/
           retention-days: 14

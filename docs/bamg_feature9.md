@@ -126,10 +126,6 @@ context가 끝나거나 예외가 발생하면 기존 함수 연결을 복구한
 ```bash
 python -m pytest tests/test_bamg_feature9.py tests/test_bamg_feature9_study.py
 python -m pytest
-sha256sum -c THREE_PILLARS_SOURCE.sha256
-sha256sum -c P_HEADROOM_SOURCE.sha256
-sha256sum -c WORLD_MODEL_SOURCE.sha256
-sha256sum -c HS_WORLD_SOURCE.sha256
 ```
 
 테스트는 수식·부호·경계 padding·autograd·checkpoint·기존 경로 복원·cohort 공유와

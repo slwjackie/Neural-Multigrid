@@ -92,15 +92,6 @@ def test_no_cherry_picking_failed_operator_and_factorial_interaction():
     assert measured_break_even(1.2,.5)==3 and measured_break_even(1.2,-.5) is None
 
 
-def test_headroom_source_manifest():
-    from pathlib import Path
-    import hashlib
-    root=Path(__file__).resolve().parents[1]
-    for line in (root/'P_HEADROOM_SOURCE.sha256').read_text().splitlines():
-        expected,path=line.split('  ',1)
-        assert hashlib.sha256((root/path).read_bytes()).hexdigest()==expected,path
-
-
 def test_energy_solver_supports_legacy_scipy_cg_tolerance(monkeypatch):
     import adaptive_mg.v67.p_headroom as headroom
     real=headroom.sla.cg

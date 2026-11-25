@@ -4,8 +4,6 @@
 
 현재 경로는 **정렬 Q1 FEM 격자의 합성 2차원 SPD 확산 문제에서 prolongation P의 가중치를 CNN으로 생성**하는 실험이다. BAMG + energy teacher의 **λ=10·30·50**으로 각각 학습하고, scratch와 warm start를 비교한 뒤, development validation으로 **가장 미세한 격자 크기별 CNN 선택 규칙**을 정한다. 최신 추가 실험은 기존 10채널 행렬 특징과 **`row9`·`symmetric9`의 9채널 특징**을 비교한다.
 
-이전 브랜치 이름은 과거 U-net 실험에서 이어졌다. 아래 경로는 작은 Weight CNN과 고정된 classical line smoother를 사용한다. EM-line, U-net, P-only, learned smoother 등 이전 경로의 예산·손실·성능 결과를 현재 실험과 혼용하지 않는다.
-
 ## 실행기 선택
 
 | 목적 | `scripts/` 아래 실행기 | 상세 문서 |
@@ -195,12 +193,6 @@ Source freeze/수치 비교/학습의 저장 해시를 수동으로 바꾸지 �
 ```bash
 python -m pytest tests/test_bamg_feature9.py tests/test_bamg_feature9_multilevel.py tests/test_bamg_feature9_study.py
 python -m pytest -ra
-sha256sum -c THREE_PILLARS_SOURCE.sha256
-sha256sum -c P_HEADROOM_SOURCE.sha256
-sha256sum -c WORLD_MODEL_SOURCE.sha256
-sha256sum -c HS_WORLD_SOURCE.sha256
 ```
 
-CI는 전체 테스트와 위 네 소스 체크섬을 검사한다. Optional native stencil 빌드도 검사하지만 현재 CPU/CSR 실험의 필수 실행 조건은 아니다. Smoke·테스트 통과는 실행 검증이며 연구 규모의 수렴·속도 우위를 보장하지 않는다. Warm solve 성능은 setup을 포함한 총시간 성능과 다르고, 정렬 합성 확산 문제 결과가 비정렬 격자·비선형 PDE·실제 CFD의 일반화를 증명하지 않는다.
-
-과거 실험·수치·패키지 manifest는 각 시점의 기록이다. [문서 목록](docs/README.md)에서 EM-line, 경량 smoother, P-only, U-net 등으로 이동할 수 있다. 별도 비정렬 neural-AMG 실행기는 이 브랜치 스냅샷의 진입점에 포함되지 않는다.
+CI는 선택적 native stencil을 빌드하고 회귀·smoke 테스트를 실행한다. 테스트 후 Git에 기록된 파일이 바뀌었는지도 확인한다. 현재 CPU/CSR 실험은 native stencil 없이 실행할 수 있다.

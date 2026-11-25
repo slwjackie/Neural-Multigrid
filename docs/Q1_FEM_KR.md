@@ -7,49 +7,16 @@ Q1 추가 자체가 multigrid의 수렴 속도 또는 NN의 우위를 보장하�
 
 ## 1. 선택 방법과 구현 위치
 
-U-net, EM-line, joint/learned-P, light-smoother, direct-pruning 및 sparse-smoother
-연구 경로의 설정 JSON 최상위에 다음 항목을 사용한다. 이들 경로와 공통
-research plan을 쓰는 three-pillars/warm 연구에도 선택값이 전파된다.
-과거 `dataset()` 기반 별도 실행기의 설정까지 일괄 변경하는 옵션은 아니다.
-
-```json
-{
-  "discretization": "q1"
-}
-```
-
-생략하면 기존 `p1`이다. Q1을 위해 별도 설정 파일을 제공한다.
-
-- `configs/v6_7_unet_transfer_q1_smoke.json`
-- `configs/v6_7_unet_transfer_q1_research.json`
-- `configs/v6_7_em_line_q1_smoke.json`
-- `configs/v6_7_em_line_q1_research.json`
-
-예를 들어 저장소 루트에서 U-net 경로의 작은 배선 검증을 시작하려면:
+현재 BAMG + energy teacher와 Weight CNN 연구는 설정 파일의 `"discretization": "q1"`로 Q1 사각형 요소를 선택한다.
+고정된 보간 연결에서 시작하는 소규모 BAMG 실험은 아래 명령으로 실행한다.
 
 ```bash
-python scripts/run_v6_7_unet_transfer_study.py prepare \
-  --config configs/v6_7_unet_transfer_q1_smoke.json \
-  --run-dir artifacts/unet_q1_smoke
-python scripts/run_v6_7_unet_transfer_study.py train \
-  --run-dir artifacts/unet_q1_smoke --stage direct
+python scripts/run_v6_7_bamg_study.py run \
+  --config configs/v6_7_bamg_compact_smoke_q1.json \
+  --output artifacts/bamg_compact_smoke_q1
 ```
 
-EM-line 경로는 다음과 같다.
-
-```bash
-python scripts/run_v6_7_em_line_study.py prepare \
-  --config configs/v6_7_em_line_q1_smoke.json \
-  --run-dir artifacts/em_line_q1_smoke
-python scripts/run_v6_7_em_line_study.py train \
-  --run-dir artifacts/em_line_q1_smoke
-```
-
-`research` 설정은 실제 연구 예산을 사용하므로 smoke 검증보다 훨씬 오래 걸린다.
-기존 P1 실행 디렉터리를 재사용하지 말고 Q1 전용 디렉터리를 사용한다.
-기존 manifest와 checkpoint의 재현성 검사는 source/config/data 변경을 검출한다.
-같은 구조의 P1 checkpoint를 Q1에 넣는 것은 이산화 변경에 대한 일반화 실험이며,
-Q1으로 새로 학습한 모델의 성능과 구별해서 보고해야 한다.
+CNN 학습에 쓰는 source study와 수치 teacher 비교를 준비하는 순서는 [연구 실행 안내](../README_KR.md)에 있다.
 
 Python에서 기본 문제를 직접 만드는 예:
 

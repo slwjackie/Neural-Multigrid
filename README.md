@@ -4,8 +4,6 @@ Branch: **`cnn-prolongation-bamg-energy-teacher`** · [한국어 안내](README_
 
 This branch studies learned prolongation for synthetic **2D SPD diffusion systems on structured Q1 FEM grids**. The current workflow trains Weight CNNs from BAMG + energy teacher labels at **λ = 10, 30, 50**, compares scratch and warm initialization, and selects one CNN family from the finest input grid size using development validation. The newest opt-in experiment compares **`row9` and `symmetric9` matrix features** with the original ten-channel representation.
 
-The former branch name came from an earlier U-net experiment. The workflow described here uses a small Weight CNN with a fixed classical line smoother. Earlier EM-line, U-net, learned-smoother and P-only studies remain available for reproduction; their defaults and performance claims do not describe this workflow.
-
 ## Choose an entry point
 
 | Purpose | Script under `scripts/` | Guide |
@@ -205,17 +203,11 @@ Each operator has manufactured, random and localized RHS and three timing repeti
 - Keep source-bound running checkouts stable. A documentation update is not a reason to reinstall dependencies or change the scientific code of a running experiment.
 - Loss reduction, fewer cycles and faster warm solves are different claims. Warm solve improvements do not establish setup-plus-solve improvements. Fixed budgets and successful smoke tests do not prove convergence, research speedup or generalization to unstructured meshes, nonlinear PDEs or real CFD.
 
-## Verification and earlier work
+## Verification
 
 ```bash
 python -m pytest tests/test_bamg_feature9.py tests/test_bamg_feature9_multilevel.py tests/test_bamg_feature9_study.py
 python -m pytest -ra
-sha256sum -c THREE_PILLARS_SOURCE.sha256
-sha256sum -c P_HEADROOM_SOURCE.sha256
-sha256sum -c WORLD_MODEL_SOURCE.sha256
-sha256sum -c HS_WORLD_SOURCE.sha256
 ```
 
-CI runs the full suite and these four source checks. The optional native stencil build is exercised by CI; the current CPU/CSR protocol does not require it. Test results validate implementation behavior, not the unexecuted research workload. Historical package manifests and historical validation records describe their own snapshots.
-
-For earlier workflows, see [BAMG source/compact studies](docs/bamg_compact_weight_study.md), [EM-line](docs/em_line_study.md), [lightweight smoothing](docs/light_smoother_study.md), [P-only](docs/learned_p_study.md), [U-net transfer](docs/RESIDUAL_UNET_TRANSFER_KR.md), and the [full document index](docs/README.md). The separate unstructured neural-AMG workflow is not an entry point in this branch snapshot.
+CI builds the optional native stencil, runs the regression and smoke tests, and checks that the tests leave tracked files unchanged. The current CPU/CSR study can run without the native stencil.

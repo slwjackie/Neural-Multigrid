@@ -1,7 +1,7 @@
 # Direct CNN + 학습한 희소 smoother
 
 > **과거 실험·구현 기록.** 아래의 기본값·명령·결과는 이 문서가 다루는 경로에 한정된다.
-> 현재 `residual-u-net-teacher`의 주 실험은 [line_alt 고정 + P-only 학습](learned_p_study.md)이다.
+> 현재 `cnn-prolongation-bamg-energy-teacher`의 주 실험은 [line_alt 고정 + P-only 학습](learned_p_study.md)이다.
 > 현재 실행은 [Mac runbook](learned_p_runbook.md), 경로별 구분은 [문서 목록](README.md)을 따른다.
 
 기존 direct CNN이 만드는 P는 가져오되, 학습한 계층의 `line_alt` smoothing을
@@ -69,7 +69,7 @@ TTT는 이 실험에 없다. Setup 비용과 learned cycle 실패 후 rollback/f
 `caffeinate -i`는 덮개를 닫았을 때의 sleep까지 보장하지 않는다.
 
 ```bash
-git clone --single-branch --branch residual-u-net-teacher \
+git clone --single-branch --branch cnn-prolongation-bamg-energy-teacher \
   https://github.com/slwjackie/Neural-Multigrid.git \
   "$HOME/Desktop/adaptive-multigrid-sparse-smoother"
 cd "$HOME/Desktop/adaptive-multigrid-sparse-smoother"

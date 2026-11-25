@@ -52,7 +52,7 @@ holdout이 새로운 독립 검증 데이터로 바뀌는 것은 아니다.
 
 ```bash
 cd adaptive-multigrid-bamg &&
-git fetch origin residual-u-net-teacher &&
+git fetch origin cnn-prolongation-bamg-energy-teacher &&
 git worktree add --detach ../adaptive-multigrid-feature9 FETCH_HEAD
 cd ../adaptive-multigrid-feature9
 source ../adaptive-multigrid-bamg/.venv-bamg/bin/activate

@@ -1,7 +1,7 @@
 # Residual U-net teacher → 작은 CNN student로 P 학습
 
 > **과거 실험·구현 기록.** 아래의 기본값·명령·결과는 이 문서가 다루는 경로에 한정된다.
-> 현재 `residual-u-net-teacher`의 주 실험은 [line_alt 고정 + P-only 학습](learned_p_study.md)이다.
+> 현재 `cnn-prolongation-bamg-energy-teacher`의 주 실험은 [line_alt 고정 + P-only 학습](learned_p_study.md)이다.
 > 현재 실행은 [Mac runbook](learned_p_runbook.md), 경로별 구분은 [문서 목록](README.md)을 따른다.
 
 이 독립 U-net 실험은 **희소 prolongation을 생성하는 NN**을 비교하는 독립 연구 경로다.
@@ -170,8 +170,8 @@ Teacher 출력은 detach하며 probes/KD/teacher는 배포 시 실행하지 않�
 
 ```bash
 git fetch origin
-git switch residual-u-net-teacher
-git pull --ff-only origin residual-u-net-teacher
+git switch cnn-prolongation-bamg-energy-teacher
+git pull --ff-only origin cnn-prolongation-bamg-energy-teacher
 python3 -m pip install -e '.[dev]'
 export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1
 RUN="artifacts/unet_transfer_smoke_$(date +%Y%m%d_%H%M%S)"

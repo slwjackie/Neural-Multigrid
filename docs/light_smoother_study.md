@@ -1,6 +1,6 @@
 # 같은 learned P에서 비교하는 경량 줄 smoother
 
-작업 브랜치는 `residual-u-net-teacher`다. 새 실행 경로는
+작업 브랜치는 `cnn-prolongation-bamg-energy-teacher`다. 새 실행 경로는
 `scripts/run_v6_7_light_smoother_study.py`이며, 기존 EM-line와 P-only 실행 파일을
 수정해 이어 붙인 실험이 아니다. 완료된 **EM-line의 `em_P`**를 가져와 P를 고정한 뒤,
 각 nonterminal level의 줄 smoother를 조절하는 두 숫자만 예측한다.
@@ -317,7 +317,7 @@ retry/cases/<failed-case>/progress.json, result.json           # 추가 후보�
 ```bash
 cd "$HOME/Desktop/adaptive-multigrid-light"
 source .venv/bin/activate
-git pull --ff-only origin residual-u-net-teacher
+git pull --ff-only origin cnn-prolongation-bamg-energy-teacher
 export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
 export VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1
 ```
@@ -395,7 +395,7 @@ retry 기록은 남는다. 원래 연구용 run을 출처로 지정한다.
 ```bash
 cd "$HOME/Desktop/adaptive-multigrid-light"
 source .venv/bin/activate
-git pull --ff-only origin residual-u-net-teacher
+git pull --ff-only origin cnn-prolongation-bamg-energy-teacher
 export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
 export VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1
 ```
@@ -450,7 +450,7 @@ caffeinate -i python -u "$SCRIPT" fit --run-dir "$LIGHT_RUN" --resume
 설치되어 있지 않고 Homebrew를 사용하는 환경이면 먼저 `brew install python@3.12`를 실행한다.
 
 ```bash
-git clone --single-branch --branch residual-u-net-teacher \
+git clone --single-branch --branch cnn-prolongation-bamg-energy-teacher \
   https://github.com/slwjackie/Neural-Multigrid.git \
   "$HOME/Desktop/adaptive-multigrid-light"
 cd "$HOME/Desktop/adaptive-multigrid-light"

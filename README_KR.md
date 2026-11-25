@@ -1,10 +1,10 @@
 # Hybrid teacher 기반 CNN 멀티그리드
 
-브랜치: **`residual-u-net-teacher`** · [English / 전체 실행 예시](README.md) · [문서 목록](docs/README.md)
+브랜치: **`cnn-prolongation-bamg-energy-teacher`** · [English / 전체 실행 예시](README.md) · [문서 목록](docs/README.md)
 
 현재 경로는 **정렬 Q1 FEM 격자의 합성 2차원 SPD 확산 문제에서 prolongation P의 가중치를 CNN으로 생성**하는 실험이다. BAMG + energy teacher의 **λ=10·30·50**으로 각각 학습하고, scratch와 warm start를 비교한 뒤, development validation으로 **가장 미세한 격자 크기별 CNN 선택 규칙**을 정한다. 최신 추가 실험은 기존 10채널 행렬 특징과 **`row9`·`symmetric9`의 9채널 특징**을 비교한다.
 
-브랜치 이름은 과거 U-net 실험에서 이어졌다. 아래 경로는 작은 Weight CNN과 고정된 classical line smoother를 사용한다. EM-line, U-net, P-only, learned smoother 등 이전 경로의 예산·손실·성능 결과를 현재 실험과 혼용하지 않는다.
+이전 브랜치 이름은 과거 U-net 실험에서 이어졌다. 아래 경로는 작은 Weight CNN과 고정된 classical line smoother를 사용한다. EM-line, U-net, P-only, learned smoother 등 이전 경로의 예산·손실·성능 결과를 현재 실험과 혼용하지 않는다.
 
 ## 실행기 선택
 
@@ -74,7 +74,7 @@ Epoch shuffle은 완료된 매 epoch에서 모든 문제를 한 번씩 사용한
 ```bash
 mkdir -p "$HOME/multigrid-studies"
 cd "$HOME/multigrid-studies"
-git clone --branch residual-u-net-teacher --single-branch \
+git clone --branch cnn-prolongation-bamg-energy-teacher --single-branch \
   https://github.com/slwjackie/Neural-Multigrid.git adaptive-multigrid-feature9-current
 cd adaptive-multigrid-feature9-current
 python3 -m venv .venv

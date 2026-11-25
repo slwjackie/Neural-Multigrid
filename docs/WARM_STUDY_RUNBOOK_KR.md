@@ -1,7 +1,7 @@
 # Warm-first Neural Multigrid 연구 실행 안내
 
 > **과거 실험·구현 기록.** 아래의 기본값·명령·결과는 이 문서가 다루는 경로에 한정된다.
-> 현재 `residual-u-net-teacher`의 주 실험은 [line_alt 고정 + P-only 학습](learned_p_study.md)이다.
+> 현재 `cnn-prolongation-bamg-energy-teacher`의 주 실험은 [line_alt 고정 + P-only 학습](learned_p_study.md)이다.
 > 현재 실행은 [Mac runbook](learned_p_runbook.md), 경로별 구분은 [문서 목록](README.md)을 따른다.
 
 ## 범위와 기존 코드와의 차이
@@ -35,8 +35,8 @@ Neural runtime 제어기 비용과 probe 비용은 측정에 포함한다.
 ```bash
 git status --short
 git fetch origin
-git switch residual-u-net-teacher
-git pull --ff-only origin residual-u-net-teacher
+git switch cnn-prolongation-bamg-energy-teacher
+git pull --ff-only origin cnn-prolongation-bamg-energy-teacher
 source .venv/bin/activate
 python -m pip install -e '.[dev]'
 export OMP_NUM_THREADS=1

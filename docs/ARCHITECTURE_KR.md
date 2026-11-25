@@ -1,6 +1,6 @@
 # 현재 P-only 구현 위치와 데이터 흐름
 
-브랜치 `residual-u-net-teacher`의 현재 기본 경로다.
+브랜치 `cnn-prolongation-bamg-energy-teacher`의 현재 기본 경로다.
 [설계](learned_p_study.md) · [실행 안내](learned_p_runbook.md) · [문서 목록](README.md)
 
 ## 먼저 읽을 파일

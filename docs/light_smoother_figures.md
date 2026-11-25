@@ -33,7 +33,7 @@ pruning, GRU 또는 P가 다른 joint_line은 이 run의 비교군이 아닙니�
 ```bash
 cd "$HOME/Desktop/adaptive-multigrid-light"
 source .venv/bin/activate
-git pull --ff-only origin residual-u-net-teacher
+git pull --ff-only origin cnn-prolongation-bamg-energy-teacher
 python -m pip install matplotlib
 ```
 

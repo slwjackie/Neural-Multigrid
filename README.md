@@ -1,10 +1,10 @@
 # Hybrid-teacher CNN multigrid
 
-Branch: **`residual-u-net-teacher`** · [한국어 안내](README_KR.md) · [Documentation index](docs/README.md)
+Branch: **`cnn-prolongation-bamg-energy-teacher`** · [한국어 안내](README_KR.md) · [Documentation index](docs/README.md)
 
 This branch studies learned prolongation for synthetic **2D SPD diffusion systems on structured Q1 FEM grids**. The current workflow trains Weight CNNs from BAMG + energy teacher labels at **λ = 10, 30, 50**, compares scratch and warm initialization, and selects one CNN family from the finest input grid size using development validation. The newest opt-in experiment compares **`row9` and `symmetric9` matrix features** with the original ten-channel representation.
 
-The branch name comes from an earlier U-net experiment. The workflow described here uses a small Weight CNN with a fixed classical line smoother. Earlier EM-line, U-net, learned-smoother and P-only studies remain available for reproduction; their defaults and performance claims do not describe this workflow.
+The former branch name came from an earlier U-net experiment. The workflow described here uses a small Weight CNN with a fixed classical line smoother. Earlier EM-line, U-net, learned-smoother and P-only studies remain available for reproduction; their defaults and performance claims do not describe this workflow.
 
 ## Choose an entry point
 
@@ -76,7 +76,7 @@ Use Linux/WSL for these commands (the study code uses `fcntl`). Python **≥3.10
 ```bash
 mkdir -p "$HOME/multigrid-studies"
 cd "$HOME/multigrid-studies"
-git clone --branch residual-u-net-teacher --single-branch \
+git clone --branch cnn-prolongation-bamg-energy-teacher --single-branch \
   https://github.com/slwjackie/Neural-Multigrid.git adaptive-multigrid-feature9-current
 cd adaptive-multigrid-feature9-current
 python3 -m venv .venv

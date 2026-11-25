@@ -1,6 +1,6 @@
 # 문서 안내
 
-브랜치: **`residual-u-net-teacher`**. 현재 진입 경로는 **BAMG + energy teacher → λ=10·30·50별 Weight CNN 학습 → validation 기반 격자별 선택 → freeze → final/OOD**다. 최신 추가 기능은 `row9`·`symmetric9`의 9채널 행렬 특징이며, 기존 10채널 경로도 비교·재현용으로 유지한다. 브랜치 이름이 현재 U-net teacher 사용을 뜻하지는 않는다.
+브랜치: **`cnn-prolongation-bamg-energy-teacher`**. 현재 진입 경로는 **BAMG + energy teacher → λ=10·30·50별 Weight CNN 학습 → validation 기반 격자별 선택 → freeze → final/OOD**다. 최신 추가 기능은 `row9`·`symmetric9`의 9채널 행렬 특징이며, 기존 10채널 경로도 비교·재현용으로 유지한다.
 
 새 사용자는 [영문 README](../README.md) 또는 [국문 README](../README_KR.md)에서 시작한다. 저장소의 기본 연구 설정은 특징 모드·데이터 규모마다 **scratch/warm × λ 3개 × seed 3개 = 18개 학습**이다. 로컬 scratch 전용 수정본을 기본 설정으로 설명하지 않는다.
 

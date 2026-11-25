@@ -29,7 +29,7 @@ directory containing the routing worktree.
 
 ```bash
 cd adaptive-multigrid-cnn-routing &&
-git fetch origin residual-u-net-teacher && git switch --detach FETCH_HEAD
+git fetch origin cnn-prolongation-bamg-energy-teacher && git switch --detach FETCH_HEAD
 
 : "${BAMG_SOURCE_STUDY:?Set the existing source study path}"
 : "${BAMG_TEACHER_COMPARISON:?Set the completed numerical comparison path}"

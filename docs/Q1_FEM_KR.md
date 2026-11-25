@@ -1,6 +1,6 @@
 # Q1 사각형 FEM: 구현과 7개 PDE family의 수학적 이산화
 
-이 문서는 `residual-u-net-teacher`의 선택 가능한 Q1 이산화를 설명한다.
+이 문서는 `cnn-prolongation-bamg-energy-teacher`의 선택 가능한 Q1 이산화를 설명한다.
 기존 삼각형 P1 경로는 기본값으로 유지한다. Q1은 PDE나 계수장의 정의를
 바꾸지 않고, 가장 미세한 격자의 형상함수와 요소 적분을 바꾼다.
 Q1 추가 자체가 multigrid의 수렴 속도 또는 NN의 우위를 보장하지는 않는다.

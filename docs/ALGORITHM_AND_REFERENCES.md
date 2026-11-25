@@ -1,6 +1,6 @@
 # Current P-only algorithm and sources
 
-This document describes the `residual-u-net-teacher` branch's current fixed-line,
+This document describes the `cnn-prolongation-bamg-energy-teacher` branch's current fixed-line,
 learned-P workflow. See [the design](learned_p_study.md), [runbook](learned_p_runbook.md)
 and [historical document index](README.md) for experimental scope.
 

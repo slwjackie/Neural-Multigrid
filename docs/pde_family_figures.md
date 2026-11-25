@@ -115,7 +115,7 @@ MG를 추가로 실행하여 실제 잔차 이력·cycle 수·성공/실패를 �
 ```bash
 cd "$HOME/Desktop/adaptive-multigrid-light"
 source .venv/bin/activate
-git pull --ff-only origin residual-u-net-teacher
+git pull --ff-only origin cnn-prolongation-bamg-energy-teacher
 python -m pip install matplotlib
 ```
 

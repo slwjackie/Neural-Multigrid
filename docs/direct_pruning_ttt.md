@@ -1,7 +1,7 @@
 # Direct CNN pruning + test-time training
 
 > **과거 실험·구현 기록.** 아래의 기본값·명령·결과는 이 문서가 다루는 경로에 한정된다.
-> 현재 `residual-u-net-teacher`의 주 실험은 [line_alt 고정 + P-only 학습](learned_p_study.md)이다.
+> 현재 `cnn-prolongation-bamg-energy-teacher`의 주 실험은 [line_alt 고정 + P-only 학습](learned_p_study.md)이다.
 > 현재 실행은 [Mac runbook](learned_p_runbook.md), 경로별 구분은 [문서 목록](README.md)을 따른다.
 
 Teacher는 그대로 두고, 기존 `residual-u-net-teacher` 실험의 **direct CNN만** 가져오는 독립 실험이다. 기존 frozen run의 코드·파일·모델을 덮어쓰지 않는다. 이 실험은 빨라졌다고 가정하지 않으며, 실패와 느려진 결과도 그대로 기록한다.
@@ -48,7 +48,7 @@ Warm은 **준비 완료 후 풀이 속도**를 비교하는 유효한 지표이�
 기존 final/OOD가 실행 중이면 **기존 checkout에서 pull하거나 source를 변경하지 않는다.** 아래처럼 새 checkout을 만든다. 기존 평가가 끝난 뒤 새 학습/benchmark를 시작해야 두 작업의 CPU 경쟁으로 시간 측정이 오염되지 않는다. 새 환경은 기존 가상환경과 분리한다.
 
 ```bash
-git clone --single-branch --branch residual-u-net-teacher \
+git clone --single-branch --branch cnn-prolongation-bamg-energy-teacher \
   https://github.com/slwjackie/Neural-Multigrid.git \
   "$HOME/Desktop/adaptive-multigrid-pruning"
 cd "$HOME/Desktop/adaptive-multigrid-pruning"

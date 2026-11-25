@@ -1,6 +1,6 @@
 # BAMG teacher와 두 CNN을 사용하는 직접 P 실험
 
-이 경로는 `residual-u-net-teacher`의 기존 실험을 보존하면서 추가한
+이 경로는 `cnn-prolongation-bamg-energy-teacher`의 기존 실험을 보존하면서 추가한
 P-only 실험이다. 수치 알고리즘이 만든 연결 mask와 보간값으로 독립적인
 Mask CNN과 Weight CNN을 지도학습한다. 이후 기준 모델과 문제·level별 mask를
 고정하고 Weight CNN만 여러 V-cycle의 잔차로 미세조정한다.

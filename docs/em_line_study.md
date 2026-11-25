@@ -1,6 +1,6 @@
 # EM 모방 P → 줄 smoother → 공동 미세조정
 
-브랜치는 **`residual-u-net-teacher`**다. 실행 파일은
+브랜치는 **`cnn-prolongation-bamg-energy-teacher`**다. 실행 파일은
 `scripts/run_v6_7_em_line_study.py`다. 이전 P-only, sparse smoother, pruning/TTT
 실험과 구분되는 **새 run**을 만든다. 이전 run의 manifest나 freeze 기록은 수정하지 않는다.
 
@@ -142,7 +142,7 @@ RHS=1의 cycle 합계는 fixed_C와 세 learned 후보 모두 115회였고, setu
 갱신하지 말고 새 폴더를 쓰는 것이 좋다.
 
 ```bash
-git clone --single-branch --branch residual-u-net-teacher \
+git clone --single-branch --branch cnn-prolongation-bamg-energy-teacher \
   https://github.com/slwjackie/Neural-Multigrid.git \
   "$HOME/Desktop/adaptive-multigrid-em-line"
 cd "$HOME/Desktop/adaptive-multigrid-em-line"
@@ -166,7 +166,7 @@ test -f "$SCRIPT" && python "$SCRIPT" --help
 ```
 
 기존 clone을 갱신하는 경우 `git status --short`에서 로컬 수정을 확인한 뒤
-`git pull --ff-only origin residual-u-net-teacher`를 사용한다. 이미 준비한 run을
+`git pull --ff-only origin cnn-prolongation-bamg-energy-teacher`를 사용한다. 이미 준비한 run을
 재개할 때는 소스·패키지·스레드 설정을 유지한다. Manifest를 편집해서 환경 검사를
 우회하지 않는다. `caffeinate -i`는 idle sleep을 막지만 덮개를 닫은 상태의 실행을
 보장하지 않으므로 장시간 실행 시 전원을 연결하고 덮개를 열어 둔다.

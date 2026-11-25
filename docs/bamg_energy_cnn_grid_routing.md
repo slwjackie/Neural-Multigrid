@@ -150,7 +150,7 @@ Start in the directory containing `adaptive-multigrid-bamg` and create a sibling
 
 ```bash
 cd adaptive-multigrid-bamg &&
-git fetch origin residual-u-net-teacher &&
+git fetch origin cnn-prolongation-bamg-energy-teacher &&
 git worktree add --detach ../adaptive-multigrid-cnn-routing FETCH_HEAD
 
 cd ../adaptive-multigrid-cnn-routing

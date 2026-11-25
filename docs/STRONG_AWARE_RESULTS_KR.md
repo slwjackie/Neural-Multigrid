@@ -1,7 +1,7 @@
 # Strong-aware smoke_01: 확인된 결과와 해석 범위
 
 > **과거 실험·구현 기록.** 아래의 기본값·명령·결과는 이 문서가 다루는 경로에 한정된다.
-> 현재 `residual-u-net-teacher`의 주 실험은 [line_alt 고정 + P-only 학습](learned_p_study.md)이다.
+> 현재 `cnn-prolongation-bamg-energy-teacher`의 주 실험은 [line_alt 고정 + P-only 학습](learned_p_study.md)이다.
 > 현재 실행은 [Mac runbook](learned_p_runbook.md), 경로별 구분은 [문서 목록](README.md)을 따른다.
 > 아래 artifacts 경로는 과거 로컬 실행 산출물이며 저장소에 포함된 다운로드 링크가 아니다.
 

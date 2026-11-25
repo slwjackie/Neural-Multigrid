@@ -32,7 +32,7 @@ are preserved; an interrupted measurement may need to run again on later resume.
 ```bash
 cd "$HOME/Desktop/adaptive-multigrid-light"
 source .venv/bin/activate
-git pull --ff-only origin residual-u-net-teacher
+git pull --ff-only origin cnn-prolongation-bamg-energy-teacher
 export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
 export VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1
 ```

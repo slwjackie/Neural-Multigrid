@@ -1,6 +1,6 @@
 # Line_alt 고정 + learned P
 
-현재 작업 브랜치는 **`residual-u-net-teacher`**다. 이름은 이전 U-net 실험에서
+현재 작업 브랜치는 **`cnn-prolongation-bamg-energy-teacher`**다. 이전 브랜치 이름은 U-net 실험에서
 이어졌지만 현재 주 경로에서는 U-net teacher를 사용하지 않는다.
 [실행 안내](learned_p_runbook.md) · [구현 위치](ARCHITECTURE_KR.md) · [문서 목록](README.md)
 

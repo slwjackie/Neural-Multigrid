@@ -1,6 +1,6 @@
 # Mac: learned P 학습·평가 실행 안내
 
-브랜치는 계속 **`residual-u-net-teacher`**다. 현재 경로는 `line_alt`를 고정하고 P만
+브랜치는 계속 **`cnn-prolongation-bamg-energy-teacher`**다. 현재 경로는 `line_alt`를 고정하고 P만
 학습한다. [설계](learned_p_study.md) · [문서 목록](README.md)
 
 명령은 저장소 루트의 macOS 터미널에서 실행한다. 기존 clone이 있으면 그 폴더를
@@ -12,7 +12,7 @@
 새로 clone할 때만:
 
 ```bash
-git clone --single-branch --branch residual-u-net-teacher \
+git clone --single-branch --branch cnn-prolongation-bamg-energy-teacher \
   https://github.com/slwjackie/Neural-Multigrid.git \
   "$HOME/Desktop/adaptive-multigrid-ponly"
 cd "$HOME/Desktop/adaptive-multigrid-ponly"
@@ -23,7 +23,7 @@ python -m pip install -e '.[dev]'
 
 기존 설치는 아래 첫 줄을 실제 clone 위치로 바꾼다. 이후 새 터미널을 열 때도 같은
 환경을 설정한다. 실행 중인 run을 재개할 때는 소스·패키지·스레드 설정을 유지한다.
-새 실험 전에 저장소를 갱신한다면 `git pull --ff-only origin residual-u-net-teacher`를
+새 실험 전에 저장소를 갱신한다면 `git pull --ff-only origin cnn-prolongation-bamg-energy-teacher`를
 사용하되, 먼저 `git status --short`에서 로컬 변경 여부를 확인한다.
 
 ```bash

@@ -23,7 +23,7 @@ Start in the parent directory of the routing worktree.
 
 ```bash
 cd adaptive-multigrid-cnn-routing &&
-git fetch origin residual-u-net-teacher && git switch --detach FETCH_HEAD
+git fetch origin cnn-prolongation-bamg-energy-teacher && git switch --detach FETCH_HEAD
 
 : "${BAMG_SOURCE_STUDY:?Set the path to the copied source study}"
 : "${BAMG_TEACHER_COMPARISON:?Set the path to the completed numerical comparison}"
